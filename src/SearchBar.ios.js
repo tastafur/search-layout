@@ -2,12 +2,10 @@ import React from 'react';
 import {
   Dimensions,
   LayoutAnimation,
-  NativeModules,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
@@ -28,42 +26,7 @@ const SearchIcon = () => (
   </View>
 );
 
-@withNavigation
-class PlaceholderButtonSearchBar extends React.PureComponent {
-  static defaultProps = {
-    placeholder: 'Search',
-    placeholderTextColor: '#ccc',
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback
-          hitSlop={{ top: 10, left: 10, bottom: 5, right: 10 }}
-          onPress={this._handlePress}>
-          <View style={styles.searchContainer} pointerEvents='box-only'>
-            <TextInput
-              editable={false}
-              placeholder={this.props.placeholder}
-              placeholderTextColor={this.props.placeholderTextColor}
-              selectionColor={this.props.selectionColor}
-              style={styles.searchInput}
-            />
-
-            <SearchIcon />
-          </View>
-        </TouchableWithoutFeedback>
-      </View>
-    );
-  }
-
-  _handlePress = () => {
-    this.props.navigator.push('search');
-  };
-}
-
-@withNavigation
-export default class SearchBar extends React.PureComponent {
+class SearchBar extends React.PureComponent {
   state = {
     text: '',
     showCancelButton: false,
@@ -182,6 +145,8 @@ export default class SearchBar extends React.PureComponent {
     }
   };
 }
+
+export default withNavigation(SearchBar)
 
 const styles = StyleSheet.create({
   container: {

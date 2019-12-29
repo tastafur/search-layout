@@ -1,14 +1,13 @@
 import React from 'react';
 import {
   Animated,
-  Dimensions,
   Platform,
   StatusBar,
   StyleSheet,
   View,
 } from 'react-native';
 import { withNavigation, HeaderBackButton } from 'react-navigation';
-import { getInset, getStatusBarHeight } from 'react-native-safe-area-view';
+import { getStatusBarHeight } from 'react-native-safe-area-view';
 import { isIphoneX } from 'react-native-iphone-x-helper';
 
 // @todo: make this work properly when in landscape
@@ -17,8 +16,8 @@ const hasNotch = isIphoneX();
 const APPBAR_HEIGHT = Platform.OS === 'ios' ? 50 : 56;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
-@withNavigation
-export default class Header extends React.PureComponent {
+
+class Header extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -131,3 +130,5 @@ export default class Header extends React.PureComponent {
     );
   }
 }
+
+export default withNavigation(Header)

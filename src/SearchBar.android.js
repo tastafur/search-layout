@@ -1,11 +1,10 @@
 import React from 'react';
-import { NativeModules, StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Touchable from 'react-native-platform-touchable';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-@withNavigation
-export default class SearchBar extends React.PureComponent {
+class SearchBar extends React.PureComponent {
   componentDidMount() {
     requestAnimationFrame(() => {
       this._textInput.focus();
@@ -87,3 +86,5 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
 });
+
+export default withNavigation(SearchBar)
