@@ -6,7 +6,6 @@
   "types": "react-navigation-search-layout.d.ts",
   "dependencies": {
     "react-native-iphone-x-helper": "^1.2.0",
-    "react-native-platform-touchable": "^1.1.1",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native-platform-touchable": "^1.1.1"
   }
 }
