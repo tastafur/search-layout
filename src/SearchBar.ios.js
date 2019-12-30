@@ -7,9 +7,9 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Image
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Layout = {
   window: {
@@ -22,7 +22,7 @@ const SearchContainerWidth =
 
 const SearchIcon = () => (
   <View style={styles.searchIconContainer}>
-    <Ionicons name="ios-search" size={18} color="#ccc" />
+    <Image source={require('./search.png')} style={{ width: 18, height: 18 }} />
   </View>
 );
 

@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, TextInput, View, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Touchable from 'react-native-platform-touchable';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class SearchBar extends React.PureComponent {
   componentDidMount() {
@@ -46,10 +45,9 @@ class SearchBar extends React.PureComponent {
                 hitSlop={{top: 15, left: 10, right: 15, bottom: 15}}
                 style={{ padding: 5 }}
                 background={Touchable.Ripple(this.props.tintColor, true)}>
-                <Ionicons
-                  name="md-close"
-                  size={25}
-                  color={this.props.tintColor}
+                <Image
+                  style={{ width: 25, height: 25}}
+                  source={require('./close.png')}
                 />
               </Touchable>
             : null}
